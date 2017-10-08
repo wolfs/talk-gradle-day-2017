@@ -1,4 +1,4 @@
-= Extreme developer productivity with Gradle
+= Entwickler-Produktivität steigern mit Gradle
 :title-slide-background-image: title.jpeg
 :title-slide-transition: zoom
 :title-slide-transition-speed: fast
@@ -12,105 +12,104 @@ ifndef::sourcedir[:sourcedir: ../java]
 
 https://twitter.com/wolfs42[Stefan Wolf (@wolfs42)], Gradle
 
-== Overview of Gradle
+== Überblick über Gradle
 
 === Gradle +++<br />+++ (management summary)
 
-* Multi purpose software automation tool
-* Build, automate and deliver better software, faster
-* Cross-platform
-* Language agnostic
-* Apache v2 licensed
-* A Build Tool + Gradle Enterprise (on premise + cloud)
+* Software besser und schneller bauen, automatisieren und ausliefern
+* Cross-Plattform
+* Sprachagnostisch
+* Apache v2 Lizenz
+* Build Tool + Gradle Enterprise (On Premises + Cloud)
 
-=== Momentum
+=== Daten
 
-* ~30 full time engineers working on Gradle
-* 3.0 released on August 15th 2016
-* 3.5 released on April 10th 2017
-* 4.0 released on June 14th 2017
-* 4.1 released on Aug 8th 2017
-* Releasing every 4 - 6 weeks.
-* 3-5 million downloads per month
+* ~30 Entwickler die Vollzeit an Gradle arbeiten
+* 3.0 - 15. August 2016
+* 3.5 - 10. April 2017
+* 4.0 - 14. Juni 2017
+* 4.2 - 20. September 2017
+* Releasezyklus 4 - 6 Wochen.
+* 3-5 Millionen Downloads pro Monat
 
-=== What is Gradle Enterprise?
+=== Was ist Gradle Enterprise?
 
-Gradle Enterprise is a platform on top of the Gradle build tool that allows to
-maximize productivity of developers and build teams, hosted on-premises.
+Gradle Enterprise ist ein Plattform komplementär zum Gradle Build Tool, dass Firmen hilft, Entwicklerproduktivität signifikant zu steigern.
 
-=== The feature sets
+=== Feature Sets
 
 image::ge_feature_sets.svg[height=500px, width=auto]
 
-== Developer productivity
+== Entwicklerproduktivität
 
-=== Influences on +++<br />+++ developer productivity
+=== Einflüsse auf +++<br />+++ Entwicklerproduktivität
 
 * IDE
-* Languages and frameworks
-* Good hardware
-* Training
-* Food in cafeteria
+* Sprachen und Frameworks
+* Gute Hardware
+* Schulung
+* Essen in der Kantine
 
-=== Four pillars of +++<br />+++ developer productivity
+=== Vier Säulen der +++<br />+++ Entwicklerproduktivität
 
-* Fast feedback cycles
-* High degree of automation
-* Faster debugging
-* Productivity culture
+* Schnelle Feedbackzyklen
+* Hohes Maß an Automation
+* Schnelles Debugging
+* Kultur der Produktivität
 
-== Fast feedback cycles
+== Schnelle Feedbackzyklen
 
-* Maximum build performance
-* Measure and optimize
-* Build reliability
+* Maximale Buildperformance
+* Messe und optimiere
+* Build-Zuverlässigkeit
 
-=== Maximum build performance
+=== Maximale Buildperformance
 
-> *Maximum build performance* is the maximum achievable performance of a build system *for your code base.*
+> *Maximale Buildperformance* ist die maximal erreichbare Performance eines Buildsystems *für Ihre Codebasis.*
 
-=== Test projects
+=== Testprojekte
 
-* Large monolithic: 1 prj, 50000 src
-* Small multiproject: 10 prj, 100 src/prj
-* Medium multiproject: 100 prj, 100 src/prj
-* Large multiproject: 500 prj, 100 src/prj
+* Large monolithic: 1 Prj, 50000 Src
+* Small multiproject: 10 Prj, 100 Src/Prj
+* Medium multiproject: 100 Prj, 100 Src/Prj
+* Large multiproject: 500 Prj, 100 Src/Prj
 
 [%notitle]
-=== Incremental build
-image::incremental-build.png[background,size=70% 70%]
+=== Inkrementeller Build
+image::incremental-build.png[background,size=70%]
 
-=== Gradle is up to 100 times faster than Maven
+=== Gradle ist bis zu 100 Mal schneller als Maven
 
-=== How
+=== Wie
 
-* Compile avoidance
-* Incremental compilation
+* Compile Avoidance
+* Inkrementelle Kompilierung
 
-=== Build cache
+=== Build Cache
 
-Gradle is reusing results +
-from *last time*  +
-when we ran *this build* +
- on *this machine*. +
+Gradle kann Ergebnisse +
+des *letzten Mals*  +
+als *dieser Build* +
+ auf *diesem Computer* +
+ausgeführt wurde wiederverwenden.
 
 image::task_inputs_outputs.svg[width=380px, height=auto]
 
-=== Gradle can do better
+=== das geht noch besser
 
-=== Why not...
+=== Wieso nicht...
 
-from *anytime before*  +
-when we ran *any build* +
- *anywhere*. +
+von *irgendwann*  +
+wenn *irgendein Build* +
+ *irgendwo* ausgeführt wurde.
 
 image::build_caching.svg[width=380px, height=auto]
 
 [%notitle]
-=== Build cache for Java projects
-image::build-cache.png[background,size=70% 70%]
+=== Build cache für Java-Projekte
+image::build-cache.png[background,size=70%]
 
-=== Build cache
+=== Build Cache
 
 [%step]
 [source,text]
@@ -126,7 +125,9 @@ Build cache is an incubating feature.
 BUILD SUCCESSFUL
 ----
 
-=== Build cache - Demo
+=== Build Cache - Demo
+
+https://enterprise-demo.gradle.com/s/4em4d65gvljsm/performance/buildCache[Build Scan]
 
 [NOTE.speaker]
 --
@@ -136,26 +137,34 @@ BUILD SUCCESSFUL
 * Look at cache controller UI
 --
 
-=== Build cache
+[%notitle]
+=== Build Cache Stats
+image::build-cache-stats.png[background,size=70%]
 
-* Stable for Java, Groovy and Scala projects
-* Gradle Enterprise provides a backend
+=== Build Cache
+
+* Stabil für Java, Groovy und Scala Projekte
+* Performantes Backend von Gradle
 * Dockerhub: https://hub.docker.com/r/gradle/build-cache-node/[gradle/build-cache-node]
 
-=== Measure and optimize
+=== Messe und optimiere
 
-* Need data
-** CI server captures times
-** What about developer builds
-* Enter build scans
+* Daten?
+** Zeiten aus CI Server
+** Entwicklerbuilds?
+* Lösung: Build Scans
 
-=== What are build scans?
+=== Was sind Build Scans?
 
-* Persistent record of what happened during a build
-* Permanent and shareable URL
-* For developers and build engineers
+* Aufzeichnung was in einem Build passiert ist
+* Permanente und teilbare URLs
+* Für Entwickler und Build Master
 
-=== Build scans - Demo
+=== Build Scans - Demo
+
+* https://enterprise-demo.gradle.com/s/4em4d65gvljsm[Build Scan]
+* https://enterprise-demo.gradle.com/scans[Scan Liste]
+* https://enterprise-demo.gradle.com/scans?tags=local[Entwickler Builds]
 
 [NOTE.speaker]
 --
@@ -164,20 +173,26 @@ BUILD SUCCESSFUL
 * Build categorization via Tags
 --
 
-=== Measure and optimize
-
-* Need data
-** Use the Gradle Enterprise export API
-
 === Export API
 
 video::202944447[vimeo,height=520]
 
-=== Build reliability
+[%notitle]
+=== Tableau - Failures by task type
 
-* Reliable parallelism
-* Cache is a forcing function
-* Build scans for debugging
+image::export-api-tableau-failures-by-task-type.png[background,size=50%]
+
+=== Build-Zuverlässigkeit
+
+* Zuverlässige Parallelität
+* Cache ist treibende Kraft
+* Build Scans zum Debugging
+* https://enterprise-demo.gradle.com/example/s/share-console-output-you-dont-understand/log#L12[console]
+https://enterprise-demo.gradle.com/example/s/pull-in-help-for-an-unexpectedly-failing-test/tests/a5a6sydx5wc2o[test]
+https://enterprise-demo.gradle.com/example/s/check-if-your-code-relies-on-a-specific-dependency/dependencies?dependencies=guava&expandAll&focusedDependencyView=dependents[dependencies]
+https://enterprise-demo.gradle.com/scans?offset=0&size=50&sortColumn=startTime&sortOrder=desc&tasks=clean[clean]
+https://enterprise-demo.gradle.com/c/5hcmtqtipvz3a/5cfa7ohmgp4be/infrastructure[comparison]
+
 
 [NOTE.speaker]
 --
@@ -188,7 +203,11 @@ video::202944447[vimeo,height=520]
 * Infrastructure comparison
 --
 
-=== Build performance and build scans - Demo
+=== Build Performance und Build Scans - Demo
+
+https://enterprise-demo.gradle.com/example/s/investigate-what-has-the-biggest-impact-on-your-configuration-time/performance/configuration[configuration]
+https://enterprise-demo.gradle.com/example/s/make-a-build-faster[execution]
+https://enterprise-demo.gradle.com/example/s/investigate-why-you-are-getting-an%E2%80%93unexpected-build-cache-miss[cache miss]
 
 [NOTE.speaker]
 --
@@ -199,60 +218,46 @@ video::202944447[vimeo,height=520]
 ** long running tests
 --
 
-== Higher degree of automation
+== Hohes Maß an Automation
 
-=== Composite build
+=== Composite Build - Demo
 
-* Works now with --continuous
-* Excellent IDE integration (Eclipse/Intellij)
-* Parallel composite build
+=== Composite Build
 
-=== Composite build - roadmap
+* Exzellente IDE Integration (Eclipse/Intellij)
+* Funktioniert mit `--continuous` und `--parallel`
 
-* Integration with build scans
-* Make substitution configureable
-* Composite task names
+== Schnelles Debugging
 
-=== Faster debugging
-
-* Build scans!
-* Traceability
-* Custom values
+* Build Scans!
+* Nachverfolgbarkeit
+* Tags und Custom Values
+  https://enterprise-demo.gradle.com/s/4speks4cee7du/custom-values[checkstyle]
+  https://enterprise-demo.gradle.com/s/4em4d65gvljsm/custom-values[gradle]
 
 [NOTE.speaker]
 --
 * Show custom values: CI, VCS information, Checkstyle errors, Links, etc.
 --
 
-== Productivity Culture
+== Kultur der Produktivität
 
-* Accountability
-* Professionalization
-* Product vs Support
+* Verantwortlichkeit
+* Professionalisierung
+* Produkt vs. Support
 
-== Developer experience
+== Links
 
-=== Guides
-
-image::guides.png[width=60%,height=60%]
-
-=== Kotlin DSL
-
-* Kotlin DSL version 0.10 (Gradle 4.1)
-* Statically typed
-* Good IDE support
-
-[%notitle]
-== Questions?
-image::questions.jpg[background, size=cover]
-
-== More resources
-
-* Slides: https://wolfs.github.io/talk-tng-techday-2017[]
+* Slides: https://wolfs.github.io/talk-gradle-day-2017[]
+* Training: https://gradle.org/training[]
+* Gradle Guides: https://guides.gradle.org[]
 * Gradle Enterprise: https://gradle.com[]
-* Gradle Build Tool: https://gradle.org[]
 * Gradle Summit 2017 videos: https://www.youtube.com/playlist?list=PLLQbIfXVLZqEFMPsWijGR043NBxwPvgtI[Youtube]
 
 [%notitle]
-== Thanks
+== Fragen?
+image::questions.jpg[background, size=cover]
+
+[%notitle]
+== Danke
 image::outro.jpeg[background, size=cover]
