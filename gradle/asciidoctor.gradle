@@ -71,7 +71,6 @@ asciidoctor {
                                 set theTabIndex to theTabIndex + 1
                                 if theTab's URL starts with theUrl then
                                     set found to true
-                                    tell application "Google Chrome" to set active tab index of theWindow to theTabIndex
                                     tell theTab to reload
                                 end if
                             end repeat
