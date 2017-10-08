@@ -246,18 +246,10 @@ https://enterprise-demo.gradle.com/example/s/investigate-why-you-are-getting-an%
 * Professionalisierung
 * Produkt vs. Support
 
-== Links
+== Danke
 
 * Slides: https://wolfs.github.io/talk-gradle-day-2017[]
 * Training: https://gradle.org/training[]
 * Gradle Guides: https://guides.gradle.org[]
 * Gradle Enterprise: https://gradle.com[]
 * Gradle Summit 2017 videos: https://www.youtube.com/playlist?list=PLLQbIfXVLZqEFMPsWijGR043NBxwPvgtI[Youtube]
-
-[%notitle]
-== Fragen?
-image::questions.jpg[background, size=cover]
-
-[%notitle]
-== Danke
-image::outro.jpeg[background, size=cover]
