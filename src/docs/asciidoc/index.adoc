@@ -34,7 +34,7 @@ https://twitter.com/wolfs42[Stefan Wolf (@wolfs42)], Gradle
 
 === Was ist Gradle Enterprise?
 
-Gradle Enterprise ist ein Plattform komplementär zum Gradle Build Tool, dass Firmen hilft, Entwicklerproduktivität signifikant zu steigern.
+Gradle Enterprise ist eine Plattform komplementär zum Gradle Build Tool, dass Firmen hilft, Entwicklerproduktivität signifikant zu steigern.
 
 === Feature Sets
 
@@ -47,8 +47,15 @@ image::ge_feature_sets.svg[height=500px, width=auto]
 * IDE
 * Sprachen und Frameworks
 * Gute Hardware
-* Schulung
+* Schulungen
 * Essen in der Kantine
+
+=== Wieso ist das wichtig
+
+* Fallstudie: +
+$1.600.000 gespart pro Jahr +
+pro Minute schnellerer Build Zeit +
+für 600 Entwickler
 
 === Vier Säulen der +++<br />+++ Entwicklerproduktivität
 
@@ -207,6 +214,7 @@ https://enterprise-demo.gradle.com/c/5hcmtqtipvz3a/5cfa7ohmgp4be/infrastructure[
 
 https://enterprise-demo.gradle.com/example/s/investigate-what-has-the-biggest-impact-on-your-configuration-time/performance/configuration[configuration]
 https://enterprise-demo.gradle.com/example/s/make-a-build-faster[execution]
+https://enterprise-demo.gradle.com/example/s/determine-how-much-time-was-spent-resolving-dependencies/performance/networkActivity[network]
 https://enterprise-demo.gradle.com/example/s/investigate-why-you-are-getting-an%E2%80%93unexpected-build-cache-miss[cache miss]
 
 [NOTE.speaker]
