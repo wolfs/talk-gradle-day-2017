@@ -1,0 +1,123 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8" /><title>Entwickler-Produktivität steigern mit Gradle</title><meta content="yes" name="apple-mobile-web-app-capable" /><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style" /><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport" /><link href="reveal.js/css/reveal.css" rel="stylesheet" /><link rel="stylesheet" href="reveal.js/css/theme/gradle.css" id="theme" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" /><link href="reveal.js/lib/css/zenburn.css" rel="stylesheet" /><script>document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );</script></head><body><div class="reveal"><div class="slides"><section class="title" data-state="title" data-transition="zoom" data-transition-speed="fast" data-background-image="./images/title.jpeg"><h1>Entwickler-Produktivität steigern mit Gradle</h1><div class="preamble"><div class="paragraph"><p><a href="https://twitter.com/wolfs42">Stefan Wolf (@wolfs42)</a>, Gradle</p></div></div></section>
+<section><section id="berblick-ber-gradle"><h2>Überblick über Gradle</h2></section><section id="gradle-br-management-summary"><h2>Gradle <br /> (management summary)</h2><div class="ulist"><ul><li><p>Software besser und schneller bauen, automatisieren und ausliefern</p></li><li><p>Cross-Plattform</p></li><li><p>Sprachagnostisch</p></li><li><p>Apache v2 Lizenz</p></li><li><p>Build Tool + Gradle Enterprise (On Premises + Cloud)</p></li></ul></div></section><section id="daten"><h2>Daten</h2><div class="ulist"><ul><li><p>~30 Entwickler die Vollzeit an Gradle arbeiten</p></li><li><p>3.0 - 15. August 2016</p></li><li><p>3.5 - 10. April 2017</p></li><li><p>4.0 - 14. Juni 2017</p></li><li><p>4.2 - 20. September 2017</p></li><li><p>Releasezyklus 4 - 6 Wochen.</p></li><li><p>3-5 Millionen Downloads pro Monat</p></li></ul></div></section><section id="was-ist-gradle-enterprise"><h2>Was ist Gradle Enterprise?</h2><div class="paragraph"><p>Gradle Enterprise ist eine Plattform komplementär zum Gradle Build Tool, dass Firmen hilft, Entwicklerproduktivität signifikant zu steigern.</p></div></section><section id="feature-sets"><h2>Feature Sets</h2><div class="imageblock" style=""><img src="./images/ge_feature_sets.svg" alt="ge feature sets" width="auto" height="500px" /></div></section></section>
+<section><section id="entwicklerproduktivitt"><h2>Entwicklerproduktivität</h2></section><section id="einflsse-auf-br-entwicklerproduktivitt"><h2>Einflüsse auf <br /> Entwicklerproduktivität</h2><div class="ulist"><ul><li><p>IDE</p></li><li><p>Sprachen und Frameworks</p></li><li><p>Gute Hardware</p></li><li><p>Schulungen</p></li><li><p>Essen in der Kantine</p></li></ul></div></section><section id="wieso-ist-das-wichtig"><h2>Wieso ist das wichtig</h2><div class="ulist"><ul><li><p>Fallstudie:<br />
+$1.600.000 gespart pro Jahr<br />
+pro Minute schnellerer Build Zeit<br />
+für 600 Entwickler</p></li></ul></div></section><section id="vier-sulen-der-br-entwicklerproduktivitt"><h2>Vier Säulen der <br /> Entwicklerproduktivität</h2><div class="ulist"><ul><li><p>Schnelle Feedbackzyklen</p></li><li><p>Hohes Maß an Automation</p></li><li><p>Schnelles Debugging</p></li><li><p>Kultur der Produktivität</p></li></ul></div></section></section>
+<section><section id="schnelle-feedbackzyklen"><h2>Schnelle Feedbackzyklen</h2><div class="ulist"><ul><li><p>Maximale Buildperformance</p></li><li><p>Messe und optimiere</p></li><li><p>Build-Zuverlässigkeit</p></li></ul></div></section><section id="maximale-buildperformance"><h2>Maximale Buildperformance</h2><div class="quoteblock"><blockquote><div class="paragraph"><p><strong>Maximale Buildperformance</strong> ist die maximal erreichbare Performance eines Buildsystems <strong>für Ihre Codebasis.</strong></p></div></blockquote></div></section><section id="testprojekte"><h2>Testprojekte</h2><div class="ulist"><ul><li><p>Large monolithic: 1 Prj, 50000 Src</p></li><li><p>Small multiproject: 10 Prj, 100 Src/Prj</p></li><li><p>Medium multiproject: 100 Prj, 100 Src/Prj</p></li><li><p>Large multiproject: 500 Prj, 100 Src/Prj</p></li></ul></div></section><section id="inkrementeller-build" data-background-image="./images/incremental-build.png" data-background-size="70%"></section><section id="gradle-ist-bis-zu-100-mal-schneller-als-maven"><h2>Gradle ist bis zu 100 Mal schneller als Maven</h2></section><section id="wie"><h2>Wie</h2><div class="ulist"><ul><li><p>Compile Avoidance</p></li><li><p>Inkrementelle Kompilierung</p></li></ul></div></section><section id="build-cache"><h2>Build Cache</h2><div class="paragraph"><p>Gradle kann Ergebnisse<br />
+des <strong>letzten Mals</strong> <br />
+als <strong>dieser Build</strong><br />
+ auf <strong>diesem Computer</strong><br />
+ausgeführt wurde wiederverwenden.</p></div>
+<div class="imageblock" style=""><img src="./images/task_inputs_outputs.svg" alt="task inputs outputs" width="380px" height="auto" /></div></section><section id="das-geht-noch-besser"><h2>das geht noch besser</h2></section><section id="wieso-nicht"><h2>Wieso nicht&#8230;&#8203;</h2><div class="paragraph"><p>von <strong>irgendwann</strong> <br />
+wenn <strong>irgendein Build</strong><br />
+ <strong>irgendwo</strong> ausgeführt wurde.</p></div>
+<div class="imageblock" style=""><img src="./images/build_caching.svg" alt="build caching" width="380px" height="auto" /></div></section><section id="build-cache-fr-java-projekte" data-background-image="./images/build-cache.png" data-background-size="70%"></section><section id="build-cache-2"><h2>Build Cache</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="text language-text">$&gt; gradle --build-cache assemble
+Build cache is an incubating feature.
+:compileJava FROM-CACHE
+:processResources
+:classes
+:jar
+:assemble
+
+BUILD SUCCESSFUL</code></pre></div></div></section><section id="build-cache-demo"><h2>Build Cache - Demo</h2><div class="paragraph"><p><a href="https://enterprise-demo.gradle.com/s/4em4d65gvljsm/performance/buildCache">Build Scan</a></p></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Show cached build from CI (pull/push)</p></li><li><p>Show cache built-in node UI</p></li><li><p>Show cache controller UI</p></li><li><p>Look at cache controller UI</p></li></ul></div></aside></section><section id="build-cache-stats" data-background-image="./images/build-cache-stats.png" data-background-size="70%"></section><section id="build-cache-3"><h2>Build Cache</h2><div class="ulist"><ul><li><p>Stabil für Java, Groovy und Scala Projekte</p></li><li><p>Performantes Backend von Gradle</p></li><li><p>Dockerhub: <a href="https://hub.docker.com/r/gradle/build-cache-node/">gradle/build-cache-node</a></p></li></ul></div></section><section id="messe-und-optimiere"><h2>Messe und optimiere</h2><div class="ulist"><ul><li><p>Daten?</p><div class="ulist"><ul><li><p>Zeiten aus CI Server</p></li><li><p>Entwicklerbuilds?</p></li></ul></div></li><li><p>Lösung: Build Scans</p></li></ul></div></section><section id="was-sind-build-scans"><h2>Was sind Build Scans?</h2><div class="ulist"><ul><li><p>Aufzeichnung was in einem Build passiert ist</p></li><li><p>Permanente und teilbare URLs</p></li><li><p>Für Entwickler und Build Master</p></li></ul></div></section><section id="build-scans-demo"><h2>Build Scans - Demo</h2><div class="ulist"><ul><li><p><a href="https://enterprise-demo.gradle.com/s/4em4d65gvljsm">Build Scan</a></p></li><li><p><a href="https://enterprise-demo.gradle.com/scans">Scan Liste</a></p></li><li><p><a href="https://enterprise-demo.gradle.com/scans?tags=local">Entwickler Builds</a></p></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Navigate to summary, open performance tab, open timeline tab, open plugins view</p></li><li><p>Show scan list</p></li><li><p>Build categorization via Tags</p></li></ul></div></aside></section><section id="export-api"><h2>Export API</h2><div class="videoblock"><iframe width="1280" height="520" src="https://player.vimeo.com/video/202944447" frameborder="0" webkitAllowFullScreen="" mozallowfullscreen="" allowFullScreen=""></iframe></div></section><section id="tableau-failures-by-task-type" data-background-image="./images/export-api-tableau-failures-by-task-type.png" data-background-size="50%"></section><section id="build-zuverlssigkeit"><h2>Build-Zuverlässigkeit</h2><div class="ulist"><ul><li><p>Zuverlässige Parallelität</p></li><li><p>Cache ist treibende Kraft</p></li><li><p>Build Scans zum Debugging</p></li><li><p><a href="https://enterprise-demo.gradle.com/example/s/share-console-output-you-dont-understand/log#L12">console</a>
+<a href="https://enterprise-demo.gradle.com/example/s/pull-in-help-for-an-unexpectedly-failing-test/tests/a5a6sydx5wc2o">test</a>
+<a href="https://enterprise-demo.gradle.com/example/s/check-if-your-code-relies-on-a-specific-dependency/dependencies?dependencies=guava&amp;expandAll&amp;focusedDependencyView=dependents">dependencies</a>
+<a href="https://enterprise-demo.gradle.com/scans?offset=0&amp;size=50&amp;sortColumn=startTime&amp;sortOrder=desc&amp;tasks=clean">clean</a>
+<a href="https://enterprise-demo.gradle.com/c/5hcmtqtipvz3a/5cfa7ohmgp4be/infrastructure">comparison</a></p></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Show scan with build failure (link to line)</p></li><li><p>Show scan with failing test (link to test failure)</p></li><li><p>Search for dependency on dependency view</p></li><li><p>Search for builds with requested task <code>clean</code></p></li><li><p>Infrastructure comparison</p></li></ul></div></aside></section><section id="build-performance-und-build-scans-demo"><h2>Build Performance und Build Scans - Demo</h2><div class="paragraph"><p><a href="https://enterprise-demo.gradle.com/example/s/investigate-what-has-the-biggest-impact-on-your-configuration-time/performance/configuration">configuration</a>
+<a href="https://enterprise-demo.gradle.com/example/s/make-a-build-faster">execution</a>
+<a href="https://enterprise-demo.gradle.com/example/s/determine-how-much-time-was-spent-resolving-dependencies/performance/networkActivity">network</a>
+<a href="https://enterprise-demo.gradle.com/example/s/investigate-why-you-are-getting-an%E2%80%93unexpected-build-cache-miss">cache miss</a></p></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Show input comparison for build cache</p></li><li><p>Go into detail of the Performance improvements</p><div class="ulist"><ul><li><p>configuration time</p></li><li><p>long running tasks</p></li><li><p>long running tests</p></li></ul></div></li></ul></div></aside></section></section>
+<section><section id="hohes-ma-an-automation"><h2>Hohes Maß an Automation</h2></section><section id="composite-build-demo"><h2>Composite Build - Demo</h2></section><section id="composite-build"><h2>Composite Build</h2><div class="ulist"><ul><li><p>Exzellente IDE Integration (Eclipse/Intellij)</p></li><li><p>Funktioniert mit <code>--continuous</code> und <code>--parallel</code></p></li></ul></div></section></section>
+<section id="schnelles-debugging"><h2>Schnelles Debugging</h2><div class="ulist"><ul><li><p>Build Scans!</p></li><li><p>Nachverfolgbarkeit</p></li><li><p>Tags und Custom Values
+<a href="https://enterprise-demo.gradle.com/s/4speks4cee7du/custom-values">checkstyle</a>
+<a href="https://enterprise-demo.gradle.com/s/4em4d65gvljsm/custom-values">gradle</a></p></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Show custom values: CI, VCS information, Checkstyle errors, Links, etc.</p></li></ul></div></aside></section>
+<section id="kultur-der-produktivitt"><h2>Kultur der Produktivität</h2><div class="ulist"><ul><li><p>Verantwortlichkeit</p></li><li><p>Professionalisierung</p></li><li><p>Produkt vs. Support</p></li></ul></div></section>
+<section id="danke"><h2>Danke</h2><div class="ulist"><ul><li><p>Slides: <a href="https://wolfs.github.io/talk-gradle-day-2017" class="bare">https://wolfs.github.io/talk-gradle-day-2017</a></p></li><li><p>Training: <a href="https://gradle.org/training" class="bare">https://gradle.org/training</a></p></li><li><p>Gradle Guides: <a href="https://guides.gradle.org" class="bare">https://guides.gradle.org</a></p></li><li><p>Gradle Enterprise: <a href="https://gradle.com" class="bare">https://gradle.com</a></p></li><li><p>Gradle Summit 2017 videos: <a href="https://www.youtube.com/playlist?list=PLLQbIfXVLZqEFMPsWijGR043NBxwPvgtI">Youtube</a></p></li></ul></div></section></div></div><script src="reveal.js/lib/js/head.min.js"></script><script src="reveal.js/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
+Reveal.initialize({
+  // Display controls in the bottom right corner
+  controls: true,
+  // Display a presentation progress bar
+  progress: true,
+  // Display the page number of the current slide
+  slideNumber: true,
+  // Push each slide change to the browser history
+  history: true,
+  // Enable keyboard shortcuts for navigation
+  keyboard: true,
+  // Enable the slide overview mode
+  overview: true,
+  // Vertical centering of slides
+  center: true,
+  // Enables touch navigation on devices with touch input
+  touch: true,
+  // Loop the presentation
+  loop: false,
+  // Change the presentation direction to be RTL
+  rtl: false,
+  // Turns fragments on and off globally
+  fragments: true,
+  // Flags if the presentation is running in an embedded mode,
+  // i.e. contained within a limited portion of the screen
+  embedded: false,
+  // Number of milliseconds between automatically proceeding to the
+  // next slide, disabled when set to 0, this value can be overwritten
+  // by using a data-autoslide attribute on your slides
+  autoSlide: 0,
+  // Stop auto-sliding after user input
+  autoSlideStoppable: true,
+  // Enable slide navigation via mouse wheel
+  mouseWheel: false,
+  // Hides the address bar on mobile devices
+  hideAddressBar: true,
+  // Opens links in an iframe preview overlay
+  previewLinks: false,
+  // Theme (e.g., beige, black, league, night, serif, simple, sky, solarized, white)
+  // NOTE setting the theme in the config no longer works in reveal.js 3.x
+  //theme: Reveal.getQueryHash().theme || 'gradle',
+  // Transition style (e.g., none, fade, slide, convex, concave, zoom)
+  transition: Reveal.getQueryHash().transition || 'linear',
+  // Transition speed (e.g., default, fast, slow)
+  transitionSpeed: 'default',
+  // Transition style for full page slide backgrounds (e.g., none, fade, slide, convex, concave, zoom)
+  backgroundTransition: 'fade',
+  // Number of slides away from the current that are visible
+  viewDistance: 3,
+  // Parallax background image (e.g., "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'")
+  parallaxBackgroundImage: '',
+  // Parallax background size in CSS syntax (e.g., "2100px 900px")
+  parallaxBackgroundSize: '',
+
+  // The "normal" size of the presentation, aspect ratio will be preserved
+  // when the presentation is scaled to fit different resolutions. Can be
+  // specified using percentage units.
+  width: 960,
+  height: 700,
+
+  // Factor of the display size that should remain empty around the content
+  margin: 0.1,
+
+  // Bounds for smallest/largest possible scale to apply to content
+  minScale: 0.2,
+  maxScale: 1.5,
+
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+      { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+  ]
+});</script><div id="footer">
+  <div style="width:100%">
+     <div style="display:inline">Extreme developer productivity with Gradle 4.0 - @gradle</div>
+     <div style="display:inline; position:absolute; right: 50px;"><img src="images/gradle-logo-min.png"></div>
+  </div>
+</div></body></html>
