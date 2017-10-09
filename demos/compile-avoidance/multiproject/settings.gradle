@@ -1,2 +1,8 @@
 include 'core', 'utils', 'app'
 
+
+buildCache {
+    local {
+        push = false
+    }
+}
