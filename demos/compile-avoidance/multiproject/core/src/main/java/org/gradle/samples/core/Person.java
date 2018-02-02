@@ -38,6 +38,10 @@ public class Person {
         return age.getYears();
     }
 
+    public void printDebug() {
+        System.out.println("Hallo Gradle Day!");
+    }
+
     @java.lang.Override
     public String toString() {
         return "Person{" +

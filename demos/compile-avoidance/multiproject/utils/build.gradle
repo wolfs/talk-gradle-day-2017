@@ -18,5 +18,5 @@ apply plugin: 'java-library'
 
 dependencies {
     api project(':core')
-    implementation 'org.apache.commons:commons-lang3:3.4'
+    implementation 'org.apache.commons:commons-lang3:3.6'
 }
